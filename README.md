@@ -2,8 +2,6 @@
 
 A command-line interface (CLI) application built with **Bash** and **PostgreSQL** that allows users to book salon appointments, check available services, and automatically manage customer records. This project was developed as part of the freeCodeCamp Relational Database certification path.
 
----
-
 ## Key Design Highlights
 
 * **Modular Bash Architecture:** Separation of concerns using dedicated control loops and functions (`MAIN_MENU` and `APPOINTMENT_MENU`) to manage flow control and error handling gracefully.
@@ -12,23 +10,18 @@ A command-line interface (CLI) application built with **Bash** and **PostgreSQL*
 * **Dynamic Customer Management:** Automatically checks if a phone number exists in the database; if not, seamlessly prompts for the customer's name and registers them before finalizing the booking.
 * **Robust Input Validation:** Uses regular expressions (`=~ ^[0-9]+$`) to validate numeric choices and handles invalid options by looping back to the main menu with helpful error feedback.
 
----
-
 ## Project Structure
 
 * `salon.sql` — The PostgreSQL database dump containing schema definitions (`customers`, `services`, `appointments`) and initial service seed data.
 * `salon.sh` — The main interactive Bash script driving the user interface and database queries.
-
----
 
 ## Database Schema Overview
 
 * **`services`**: Stores available salon treatments (e.g., cut, color, perm, style, trim).
 * **`customers`**: Stores client contact info, mapped uniquely by phone number.
 * **`appointments`**: Junction table connecting customers to their chosen services and scheduled times.
+  
 ## Getting Started
-
----
 ### Prerequisites
 
 * **PostgreSQL** installed and running on your system.
@@ -72,7 +65,3 @@ Launch the appointment scheduler in your terminal:
 ./salon.sh
 
 ```
-
----
-
-
