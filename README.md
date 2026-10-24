@@ -4,7 +4,7 @@ A command-line interface (CLI) application built with **Bash** and **PostgreSQL*
 
 ---
 
-## 🛠️ Key Design Highlights
+## Key Design Highlights
 
 * **Modular Bash Architecture:** Separation of concerns using dedicated control loops and functions (`MAIN_MENU` and `APPOINTMENT_MENU`) to manage flow control and error handling gracefully.
 * **Whitespace & Output Normalization:** Utilizes `sed` with regular expressions (`sed 's/^ *| *$//g'`) to strip unwanted trailing spaces and pipe characters from PostgreSQL tuples-only output streams.
@@ -14,15 +14,21 @@ A command-line interface (CLI) application built with **Bash** and **PostgreSQL*
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 * `salon.sql` — The PostgreSQL database dump containing schema definitions (`customers`, `services`, `appointments`) and initial service seed data.
 * `salon.sh` — The main interactive Bash script driving the user interface and database queries.
 
 ---
 
-## 🚀 Getting Started
+## Database Schema Overview
 
+* **`services`**: Stores available salon treatments (e.g., cut, color, perm, style, trim).
+* **`customers`**: Stores client contact info, mapped uniquely by phone number.
+* **`appointments`**: Junction table connecting customers to their chosen services and scheduled times.
+## Getting Started
+
+---
 ### Prerequisites
 
 * **PostgreSQL** installed and running on your system.
@@ -69,8 +75,4 @@ Launch the appointment scheduler in your terminal:
 
 ---
 
-## 🗄️ Database Schema Overview
 
-* **`services`**: Stores available salon treatments (e.g., cut, color, perm, style, trim).
-* **`customers`**: Stores client contact info, mapped uniquely by phone number.
-* **`appointments`**: Junction table connecting customers to their chosen services and scheduled times.
